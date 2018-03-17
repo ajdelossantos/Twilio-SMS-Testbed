@@ -3,7 +3,7 @@ import { fetchMessages } from '../../actions/messages_actions';
 import MessagesIndex from './messages_index';
 
 const mapStateToProps = state => ({
-    messages: Object.values(state.messages)
+    messages: Object.values(state.messages).reverse()
 });
 
 const mapDispatchToProps = dispatch => ({

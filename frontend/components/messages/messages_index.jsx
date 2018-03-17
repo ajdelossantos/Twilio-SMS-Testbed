@@ -10,7 +10,7 @@ class MessagesIndex extends React.Component {
   render() {
     const messages = this.props.messages;
     return (
-    <div>
+    <div className="messages-index__container">
       {messages.map(message => (
         <MessagesIndexItem
           key = {`message__id--${message.id}`}
