@@ -11,4 +11,10 @@ class Message < ApplicationRecord
 
     "(#{area_code}) #{middle}-#{last}"
   end
+
+  def format_create_at
+    date_sent = self.created_at.in_time_zone('Pacific Time (US & Canada)').strftime('%A, %B %e, %Y')
+    time_sent = self.created_at.in_time_zone('Pacific Time (US & Canada)').strftime('%I:%M %p')
+    "sent on #{date_sent} at #{time_sent}"
+  end
 end

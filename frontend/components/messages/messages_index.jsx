@@ -1,4 +1,5 @@
 import React from 'react';
+import MessagesIndexItem from "./messages_index_item";
 
 class MessagesIndex extends React.Component {
 
@@ -11,12 +12,10 @@ class MessagesIndex extends React.Component {
     return (
     <div>
       {messages.map(message => (
-        <div key={`message-${message.id}`}>
-          <ul>
-            <li>{message.body}</li>
-            <li>{message.from}</li>
-          </ul>
-        </div>
+        <MessagesIndexItem
+          key = {`message__id--${message.id}`}
+          message={ message }
+        />
       ))}
     </div>
     );
