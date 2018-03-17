@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import { fetchMessages } from '../../actions/messages_actions';
+import { selectAllMessages } from '../../reducers/selectors';
 import MessagesIndex from './messages_index';
 
 const mapStateToProps = state => ({
-    messages: Object.values(state.messages).reverse()
+  messages: selectAllMessages(state)
 });
 
 const mapDispatchToProps = dispatch => ({
