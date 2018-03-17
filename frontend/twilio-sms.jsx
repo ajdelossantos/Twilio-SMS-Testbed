@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import configureStore from './store/store';
 import debugScript from './debug/debug_script';
+import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -10,5 +11,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   debugScript(store, true);
 
-  ReactDOM.render(<h1>Twilio-SMS</h1>, root);
+  ReactDOM.render(<Root store={ store }/>, root);
 });
