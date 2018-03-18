@@ -5,7 +5,8 @@ class MessagesController < ApplicationController
   def reply
     message_body = params["Body"]
     from_number = params["From"]
-    message_params = { from: from_number, body: message_body, metadata: "" }
+    metadata = params
+    message_params = { from: from_number, body: message_body, metadata: params }
 
     boot_twilio
     @message = Message.new(message_params)

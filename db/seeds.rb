@@ -8,7 +8,7 @@
 
 msg_1 = {from: "+15103036481", body: "Hello world from the seeds!"}
 msg_2 = {from: "+15103036481", body: "Hello again, from the seeds!"}
-msg_3 = {from: "+15103036481", body: "This is the last seeded message.", metadata: "{'number': 42}"}
+msg_3 = {from: "+15103036481", body: "This is the last seeded message.", metadata: '{"number": "42"}'}
 
 Message.create(msg_1)
 Message.create(msg_2)

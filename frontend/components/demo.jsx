@@ -16,8 +16,8 @@ function DemoHeader(props) {
   return (
     <div className={classes.root}>
       <AppBar position="static" color="default">
-        <Toolbar>
-          <Typography variant="title" color="inherit">
+        <Toolbar className="header__toolbar">
+          <Typography variant="title" color="inherit" align="center">
             Twilio-SMS
           </Typography>
         </Toolbar>

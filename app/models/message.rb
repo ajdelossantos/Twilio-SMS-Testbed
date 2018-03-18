@@ -1,3 +1,5 @@
+require 'json'
+
 class Message < ApplicationRecord
   validates :from, :body, presence: true
   # Code goes here
@@ -16,5 +18,16 @@ class Message < ApplicationRecord
     date_sent = self.created_at.in_time_zone('Pacific Time (US & Canada)').strftime('%A, %B %e, %Y')
     time_sent = self.created_at.in_time_zone('Pacific Time (US & Canada)').strftime('%I:%M %p')
     "sent on #{date_sent} at #{time_sent}"
+  end
+
+  # Allows front end to parse metadata strings as JSON objects
+  def parse_metadata
+    metadata = self.metadata
+
+    if metadata.nil? || metadata.empty? 
+      metadata = '{}'
+    end
+    
+    JSON.parse(metadata.gsub('=>', ':'))
   end
 end
